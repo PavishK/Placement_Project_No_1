@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { useEffect } from 'react';
+
 function Login() {
 
   const notify = () =>toast.success('Login Successful! 😎', {
@@ -41,9 +43,9 @@ function Login() {
 
 
 
-  const display=async(e)=>{
+  const display=async()=>{
 
-    e.preventDefault();
+   
     console.log(data);
     try{
     const config={
@@ -61,7 +63,8 @@ function Login() {
   }
   }
 
-  const ValidateData=()=>{
+  const ValidateData=(e)=>{
+    e.preventDefault();
     if(!data.name || !data.password){
       notifyError("Fill the requiremenst!");
     }
@@ -70,6 +73,7 @@ function Login() {
     }
     else{
       display();
+      window.setTimeout(navigate('/'),2000)
     }
 
   }

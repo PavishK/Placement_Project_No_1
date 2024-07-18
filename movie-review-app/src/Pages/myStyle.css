@@ -1,8 +1,16 @@
+
+
 body{
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #D9D9D9;
+}
+
+
+@font-face {
+    font-family: DeathNote;
+    src: url("../assets/DeathNote.ttf");
 }
 
 .nav-container{
@@ -60,12 +68,188 @@ body{
     align-items: center;
     justify-content: center;
     background-color: #D9D9D9;
+    align-content: center;
 }
+
 .home-item h1{
     text-decoration: none;
-    font-size: 80px;
+    align-self: center;
+    font-size: 100px;
+    background-color: transparent;
+    font-family: DeathNote;
+    transition-duration: 0.8s;
+}
+
+.home-item h1:hover{
+    text-decoration: none;
+    align-self: center;
+    font-size: 100px;
+    background-color: transparent;
+    font-family: DeathNote;
+    background: url("../assets/sea.gif");
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    
+} 
+.home-item h2{
+    background-color: transparent;
+    color:#2C2C2C;
+    font-weight: 800;
+    font-size: 36px;
+    margin-top: -50px;
+    font-family: DeathNote;
+}
+
+.btn-item{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn-1{
+    padding: 10px;
+    width: 45%;
+    height: 20%;
+    text-align: center;
+    border-radius: 50px;
+    justify-self: flex-start;
+    font-weight: 500;
+    transition-duration: 3s;
+}
+
+.btn-1 img{
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    margin-bottom: -5px;
+}
+
+.btn-2{
+    padding: 10px;
+    justify-self: flex-end;
+    width: 45%;
+    height: 20%;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+    background-color: #2C2C2C;
+    font-weight: 500;
+}
+
+
+
+.btn-2 img{
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    margin-bottom: -5px;
+}
+
+
+/*******************************  Explore *******************************/
+
+.explore-container{
+    margin-top: 30vh;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
     background-color: transparent;
 }
 
+.heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 01rem;
+    z-index: -1;
+}
 
+.heading span{
+    font-size: 3rem;
+    padding: .5rem 2rem;
+    color:#2C2C2C;
+    background-color: transparent;
 
+}
+
+.explore-container .slider .box{
+    width: 25rem;
+    margin: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: var(--border);
+    text-align: center;
+}
+
+.explore-container .slider .box:hover{
+    border: var(--border-hover);
+}
+
+.explore-container .slider .box .image{
+    height: fit-content;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    
+}
+.explore-container .slider .box{
+    background: linear-gradient(15deg,#2C2C2C 30%,#D9D9D9 30.1%);
+
+}
+
+.explore-container .slider .box .image img{
+    height: 20rem;
+}
+
+.explore-container .slider .box .icons span{
+    background: var(--green);
+    color: #fff;
+}
+.explore-container .slider .box strike{
+    font-size: small;
+}
+
+.explore-container .slider .box .content{
+    color: #fff;
+}
+
+.slider{
+    overflow-y: auto;
+
+}
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 1500px;
+    flex-direction: row;
+}
+
+.content button{
+    padding: .5rem;
+    width: 60%;
+    margin-top: 8px;
+    border-radius: 5px;
+    color: black;
+    background-color: #D9D9D9;
+}
+
+.content img{
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+    margin-bottom: -5px;
+}

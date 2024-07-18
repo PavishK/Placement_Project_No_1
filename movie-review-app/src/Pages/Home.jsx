@@ -2,10 +2,15 @@ import React from 'react';
 import './myStyle.css';
 import Logo from '../assets/main-logo.png';
 import { useNavigate } from 'react-router-dom';
-
+import { useRef } from 'react';
+import Explore from './Explore';
+import ExploreImg from '../assets/explore.gif'
+import SearchImg from '../assets/search.gif'
 
 
 function Home() {
+    const explore=useRef(null);
+    const help=useRef(null);
 
     const navigate=useNavigate();
    
@@ -17,7 +22,7 @@ function Home() {
         <div className='nave-item'>
             <nav>
                 <ul>
-                    <li>Home</li>
+                    <li className='Home'>Home</li>
                     <li>Search</li>
                     <li>Favourite</li>
                     <li>Help</li>
@@ -31,8 +36,22 @@ function Home() {
     <div className='home-body'>
     <div className='home-item'>
         <h1>Book Sea</h1>
-        <p>Door way of the knowledge.</p>
+        <center>
+        <h2>Your personal book<br></br>recommendations</h2> 
+        </center>   
+        <div className='btn-item'>
+        <button className='btn-1' onClick={()=>explore.current.scrollIntoView({behavior:'smooth'})}>Explore
+      <img src={ExploreImg} alt=''/>
+         </button>
+        <button className='btn-2'>Search
+        <img src={SearchImg} alt=''/>
+        </button>
     </div>
+    </div>
+    </div>
+    <div ref={explore}>
+    <Explore/>
+
     </div>
     </>
 

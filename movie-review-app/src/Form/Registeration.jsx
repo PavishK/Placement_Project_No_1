@@ -40,8 +40,7 @@ function Registeration() {
     setData({...data,[name]:value});
   }
 
-  const display=async(e)=>{
-    e.preventDefault();
+  const display=async()=>{
     console.log(data);
     try{
     const config={
@@ -61,7 +60,8 @@ function Registeration() {
 
   }
 
-  const validateData=()=>{
+  const validateData=(e)=>{
+    e.preventDefault();
 
     if(!data.name || !data.email || !data.password || !pass){
      notifyError("Fill the requirements!");
